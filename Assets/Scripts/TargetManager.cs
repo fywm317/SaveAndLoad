@@ -8,7 +8,15 @@ public class TargetManager : MonoBehaviour
     public GameObject[] monsters;
     [Tooltip("当前激活的monster")]
     private GameObject activeMonster = null;
-    
+
+    private static TargetManager _instance;
+    public static TargetManager Instance { get { return _instance; } }
+
+    private void Awake()
+    {
+        _instance = this;
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +69,18 @@ public class TargetManager : MonoBehaviour
     {
         yield return new WaitForSeconds(Random.Range(4, 10));
         DeActivateMonster();
+    }
+
+    /// <summary>
+    /// 重新生成monster
+    /// </summary>
+    public void UpdateMonster() {
+        StopAllCoroutines(); //停止所有协程
+        if (activeMonster != null) {
+            activeMonster.SetActive(false);
+            activeMonster = null;
+        }
+        StartCoroutine("AliveTimer"); //重新开始协程，生成monster
     }
 
 }

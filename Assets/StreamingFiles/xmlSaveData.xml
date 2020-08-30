@@ -1,0 +1,20 @@
+<root name="saveData">
+  <target>
+    <targetPos>1</targetPos>
+    <monsterType>3</monsterType>
+  </target>
+  <target>
+    <targetPos>2</targetPos>
+    <monsterType>2</monsterType>
+  </target>
+  <target>
+    <targetPos>5</targetPos>
+    <monsterType>3</monsterType>
+  </target>
+  <target>
+    <targetPos>6</targetPos>
+    <monsterType>0</monsterType>
+  </target>
+  <shootAmount>4</shootAmount>
+  <hitAmount>2</hitAmount>
+</root>

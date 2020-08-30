@@ -7,14 +7,13 @@ public class TargetManager : MonoBehaviour
     [Tooltip("4种怪物数组")]
     public GameObject[] monsters;
     [Tooltip("当前激活的monster")]
-    private GameObject activeMonster = null;
-
-    private static TargetManager _instance;
-    public static TargetManager Instance { get { return _instance; } }
+    public GameObject activeMonster = null;
+    [Tooltip("Target编号，0-9,Save/Load用")]
+    public int tagetPos;
 
     private void Awake()
     {
-        _instance = this;
+
     }
 
     // Start is called before the first frame update
@@ -77,10 +76,29 @@ public class TargetManager : MonoBehaviour
     public void UpdateMonster() {
         StopAllCoroutines(); //停止所有协程
         if (activeMonster != null) {
+            activeMonster.GetComponent<BoxCollider>().enabled = false;
             activeMonster.SetActive(false);
             activeMonster = null;
         }
         StartCoroutine("AliveTimer"); //重新开始协程，生成monster
+    }
+
+    /// <summary>
+    /// 读取游戏时根据存档记录初始化Monster
+    /// </summary>
+    /// <param name="type"></param>
+    public void LoadMonsterByType(int type) {
+        StopAllCoroutines(); //停止所有协程
+        if (activeMonster != null)
+        {
+            activeMonster.GetComponent<BoxCollider>().enabled = false;
+            activeMonster.SetActive(false);
+            activeMonster = null;
+        }
+        activeMonster = monsters[type];
+        activeMonster.SetActive(true);
+        activeMonster.GetComponent<BoxCollider>().enabled = true;
+        StartCoroutine("DeathTimer"); //重新开始协程循环
     }
 
 }

@@ -6,10 +6,10 @@ public class MonsterManager : MonoBehaviour
 {
     public AnimationClip idleClip;
     public AnimationClip dieClip;
-
     private Animation anim;
-
     public AudioSource kickSound;
+    [Tooltip("Monster类型")]
+    public int monsterType;
 
     // Start is called before the first frame update
     void Awake()
@@ -49,6 +49,6 @@ public class MonsterManager : MonoBehaviour
 
     private IEnumerator DeActivate() {
         yield return new WaitForSeconds(2);
-        TargetManager.Instance.UpdateMonster();
+        gameObject.GetComponentInParent<TargetManager>().UpdateMonster();
     }
 }

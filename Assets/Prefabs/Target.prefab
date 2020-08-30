@@ -417,6 +417,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleClip: {fileID: 7400000, guid: fd4b310424927a840906404a14eeb5e4, type: 3}
   dieClip: {fileID: 7400008, guid: fd4b310424927a840906404a14eeb5e4, type: 3}
+  kickSound: {fileID: 0}
+  monsterType: 1
 --- !u!1 &1406637309249258328
 GameObject:
   m_ObjectHideFlags: 0
@@ -1662,6 +1664,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleClip: {fileID: 7400000, guid: 59afa1f2c595d6343b15e945602e1f8f, type: 3}
   dieClip: {fileID: 7400008, guid: 59afa1f2c595d6343b15e945602e1f8f, type: 3}
+  kickSound: {fileID: 0}
+  monsterType: 0
 --- !u!1 &1406637310995337075
 GameObject:
   m_ObjectHideFlags: 0
@@ -1902,6 +1906,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleClip: {fileID: 7400000, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
   dieClip: {fileID: 7400008, guid: 05b0336cad2ece64b99ce054ed619f4c, type: 3}
+  kickSound: {fileID: 0}
+  monsterType: 2
 --- !u!1 &1406637311614187277
 GameObject:
   m_ObjectHideFlags: 0
@@ -3042,6 +3048,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   idleClip: {fileID: 7400000, guid: e607f74860c67814e93c914b710142d5, type: 3}
   dieClip: {fileID: 7400006, guid: e607f74860c67814e93c914b710142d5, type: 3}
+  kickSound: {fileID: 0}
+  monsterType: 3
 --- !u!1 &1406637312899090475
 GameObject:
   m_ObjectHideFlags: 0

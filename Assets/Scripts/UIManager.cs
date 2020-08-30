@@ -13,6 +13,13 @@ public class UIManager : MonoBehaviour
     public int shootAmount;
     [Tooltip("击中次数")]
     public int hitAmount;
+    [Tooltip("Save/Load提示信息")]
+    public Text recordMessage;
+
+    private void Awake()
+    {
+        gameObject.transform.Find("txt_msg").gameObject.SetActive(false);
+    }
 
     // Start is called before the first frame update
     void Start()
@@ -36,6 +43,10 @@ public class UIManager : MonoBehaviour
     public void AddHitAmount()
     {
         hitAmount++;
+    }
+
+    public void AnimEnd() {
+        recordMessage.gameObject.GetComponent<Animator>().SetBool("IsActive", false);
     }
 
 }
